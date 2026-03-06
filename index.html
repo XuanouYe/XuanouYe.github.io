@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xuanou Ye</title>
-  <meta name="description" content="Xuanou Ye | Mechanical Engineering intern focused on manufacturing, computational methods, and software development." />
+  <meta name="description" content="Xuanou Ye | Mechanical Engineering student focused on manufacturing, computational methods, machine learning, and software development." />
   <style>
     :root {
       --bg: #ffffff;
@@ -13,7 +13,8 @@
       --muted: #777777;
       --line: #e9e9e9;
       --accent: #1f4fd1;
-      --max-width: 920px;
+      --card: #fafafa;
+      --max-width: 980px;
     }
 
     * {
@@ -51,6 +52,7 @@
       background: rgba(255,255,255,0.96);
       position: sticky;
       top: 0;
+      z-index: 20;
     }
 
     .nav-inner {
@@ -104,7 +106,7 @@
     }
 
     section {
-      padding: 42px 0;
+      padding: 44px 0;
       border-bottom: 1px solid var(--line);
     }
 
@@ -140,24 +142,10 @@
       gap: 28px;
     }
 
-    .item {
-      padding: 0 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--subtext);
-    }
-
-    li {
-      margin-bottom: 8px;
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
     }
 
     .tags {
@@ -173,12 +161,60 @@
       font-size: 14px;
       color: var(--subtext);
       border-radius: 999px;
+      background: #fff;
     }
 
-    .two-col {
+    .card-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--subtext);
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .link-arrow {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .item {
+      padding: 0 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     footer {
@@ -189,7 +225,8 @@
 
     @media (max-width: 760px) {
       .grid,
-      .two-col {
+      .two-col,
+      .card-grid {
         grid-template-columns: 1fr;
       }
 
@@ -206,6 +243,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#development">Development</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -218,11 +256,11 @@
       <h1>Xuanou Ye</h1>
       <p>
         Mechanical Engineering student focused on advanced manufacturing, computational methods,
-        and software development.
+        machine learning in engineering, and software development.
       </p>
       <p class="muted">
-        I am interested in manufacturing systems, simulation-driven engineering, machine learning
-        applications in industry, and practical software tools for design, analysis, and control.
+        I am interested in manufacturing systems, simulation-driven engineering, data-driven modeling,
+        and practical software tools for design, analysis, control, and digital manufacturing workflows.
       </p>
       <div class="hero-links">
         <a href="mailto:yexuanou2022@outlook.com">Email</a>
@@ -236,24 +274,24 @@
       <div>
         <h2>About</h2>
         <p class="muted">
-          I work at the intersection of manufacturing, simulation, and development. My experience
-          includes hybrid additive-subtractive systems, multi-physics analysis, CAM workflow
-          development, embedded control, and geometry processing with Python.
+          I work at the intersection of manufacturing, simulation, and development. My experience includes
+          hybrid additive-subtractive systems, multi-physics analysis, CAM workflow development, embedded
+          control, and geometry processing with Python.
         </p>
         <p class="muted">
-          I aim to build practical engineering tools that connect physical processes with digital
-          methods, especially in smart manufacturing and computational engineering.
+          I aim to build practical engineering tools that connect physical processes with digital methods,
+          especially in smart manufacturing, computational engineering, and machine learning applications.
         </p>
       </div>
       <div>
         <h2>Interests</h2>
         <div class="tags">
           <span class="tag">Advanced Manufacturing</span>
-          <span class="tag">Industrial AI</span>
+          <span class="tag">Computational Methods</span>
+          <span class="tag">Machine Learning</span>
           <span class="tag">Simulation</span>
           <span class="tag">CAM Development</span>
           <span class="tag">Embedded Systems</span>
-          <span class="tag">Path Planning</span>
         </div>
       </div>
     </div>
@@ -262,46 +300,138 @@
   <section id="projects">
     <div class="container">
       <h2>Projects</h2>
+      <div class="card-grid">
 
-      <div class="item">
-        <h3>Hybrid Additive-Subtractive Manufacturing Equipment for Alloy Casting</h3>
-        <div class="small">Graduation Project · Zhejiang University</div>
-        <ul>
-          <li>Developed a hybrid workflow integrating 3D printing and CNC subtractive processes for prototype validation in alloy casting.</li>
-          <li>Built Vericut simulation models for the full machine structure and analyzed manufacturing processes.</li>
-          <li>Designed support-free mold printing strategies and optimized multi-axis control methods.</li>
-          <li>Created Python scripts for STL processing and G-code post-processing.</li>
-        </ul>
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Hybrid Additive-Subtractive Manufacturing Equipment for Alloy Casting</h3>
+              <div class="small">Graduation Project · Zhejiang University</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed a hybrid workflow integrating 3D printing and CNC subtractive processes for prototype validation in alloy casting.</li>
+            <li>Built Vericut simulation models for the full machine structure and analyzed manufacturing processes.</li>
+            <li>Designed support-free mold printing strategies and optimized multi-axis control methods.</li>
+            <li>Created Python scripts for STL processing and G-code post-processing.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Coupled Mold-Flow and Structural Simulation for Plastic Pump Bodies</h3>
+              <div class="small">Internship · Leo Pump Zhejiang Company</div>
+            </div>
+          </div>
+          <ul>
+            <li>Performed Moldflow analysis to predict weld lines, fiber orientation, and residual stress effects.</li>
+            <li>Built an integrated workflow mapping process simulation outputs into ANSYS and Helius structural models.</li>
+            <li>Conducted static FEA for operational mechanical performance evaluation.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Climbing In-Situ Hybrid Repair Robot</h3>
+              <div class="small">Research Training · Zhejiang University</div>
+            </div>
+          </div>
+          <ul>
+            <li>Contributed to a crawling robot for on-site additive and subtractive repair of large structures.</li>
+            <li>Wrote STM32-based motion control test code and supported hardware integration.</li>
+            <li>Participated in platform assembly, operation design, and testing.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>CAM Software Development for 3D Printing</h3>
+              <div class="small">Course Project · Zhejiang University</div>
+            </div>
+          </div>
+          <ul>
+            <li>Built a Python-based CAM tool for STL import, visualization, slicing, path planning, and G-code generation.</li>
+            <li>Used VTK for model display and implemented slicing algorithms for 3D printing workflows.</li>
+            <li>Validated generated toolpaths on a physical 3D printer.</li>
+          </ul>
+        </article>
+
       </div>
+    </div>
+  </section>
 
-      <div class="item">
-        <h3>Coupled Mold-Flow and Structural Simulation for Plastic Pump Bodies</h3>
-        <div class="small">Internship · Leo Pump Zhejiang Company</div>
-        <ul>
-          <li>Performed Moldflow analysis to predict weld lines, fiber orientation, and residual stress effects.</li>
-          <li>Built an integrated workflow mapping process simulation outputs into ANSYS and Helius structural models.</li>
-          <li>Conducted static FEA for operational mechanical performance evaluation.</li>
-        </ul>
-      </div>
+  <section id="development">
+    <div class="container">
+      <h2>Development</h2>
+      <p class="muted">
+        Selected software and code-based work related to computational engineering, machine learning,
+        and digital manufacturing.
+      </p>
 
-      <div class="item">
-        <h3>Climbing In-Situ Hybrid Repair Robot</h3>
-        <div class="small">Research Training · Zhejiang University</div>
-        <ul>
-          <li>Contributed to a crawling robot for on-site additive and subtractive repair of large structures.</li>
-          <li>Wrote STM32-based motion control test code and supported hardware integration.</li>
-          <li>Participated in platform assembly, operation design, and testing.</li>
-        </ul>
-      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Computational Methods and Machine Learning in Engineering</h3>
+              <div class="small">Course / Project</div>
+            </div>
+            <a class="link-arrow" href="https://github.com/XuanouYe/Computational-Methods-and-Machine-Learning-in-Engineering" target="_blank">GitHub ↗</a>
+          </div>
+          <p class="muted">
+            A project exploring how computational methods and machine learning can be applied to engineering
+            problems through numerical implementation, data analysis, and model-based workflows.
+          </p>
+          <ul>
+            <li>Focuses on engineering-oriented numerical methods, regression or prediction tasks, and reproducible coding workflows.</li>
+            <li>Highlights the connection between data-driven models and physical or simulation-based engineering problems.</li>
+            <li>Demonstrates implementation in Python for analysis, modeling, and visualization.</li>
+          </ul>
+        </article>
 
-      <div class="item">
-        <h3>CAM Software Development for 3D Printing</h3>
-        <div class="small">Course Project · Zhejiang University</div>
-        <ul>
-          <li>Built a Python-based CAM tool for STL import, visualization, slicing, path planning, and G-code generation.</li>
-          <li>Used VTK for model display and implemented slicing algorithms for 3D printing workflows.</li>
-          <li>Validated generated toolpaths on a physical 3D printer.</li>
-        </ul>
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>3D Printing CAM Tool</h3>
+              <div class="small">Python · Geometry Processing</div>
+            </div>
+            <a class="link-arrow" href="https://github.com/XuanouYe" target="_blank">GitHub ↗</a>
+          </div>
+          <p class="muted">
+            A Python-based engineering software project covering STL import, slicing, toolpath planning,
+            visualization, and G-code generation for additive manufacturing workflows.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>STL and G-code Processing Scripts</h3>
+              <div class="small">Python · Manufacturing Workflow</div>
+            </div>
+            <a class="link-arrow" href="https://github.com/XuanouYe" target="_blank">GitHub ↗</a>
+          </div>
+          <p class="muted">
+            Utility scripts for mesh handling, STL preprocessing, and G-code post-processing in hybrid
+            manufacturing scenarios.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Embedded Motion Control Prototypes</h3>
+              <div class="small">STM32 · C</div>
+            </div>
+            <a class="link-arrow" href="https://github.com/XuanouYe" target="_blank">GitHub ↗</a>
+          </div>
+          <p class="muted">
+            Prototype control code and testing logic for motion platforms related to repair robotics
+            and manufacturing equipment.
+          </p>
+        </article>
       </div>
     </div>
   </section>
@@ -312,14 +442,17 @@
       <div class="grid">
         <div>
           <h3>Engineering & Simulation</h3>
-          <p class="muted">SolidWorks, AutoCAD, ANSYS Workbench, Moldflow, Helius, Cura</p>
+          <p class="muted">SolidWorks, AutoCAD, ANSYS Workbench, Moldflow, Helius, Vericut, Cura, Fusion 360</p>
+
+          <h3>Manufacturing</h3>
+          <p class="muted">Additive manufacturing, subtractive manufacturing, CNC workflow, STL processing, path planning</p>
         </div>
         <div>
           <h3>Programming</h3>
           <p class="muted">Python, C, MATLAB, LaTeX, STM32, Arduino</p>
 
           <h3>Data & Computation</h3>
-          <p class="muted">Numerical analysis, image recognition, scientific visualization, vibration system solving</p>
+          <p class="muted">Numerical analysis, image recognition, scientific visualization, engineering-oriented machine learning</p>
         </div>
       </div>
     </div>
