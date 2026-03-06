@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xuanou Ye | Manufacturing, ML & Development</title>
+  <meta name="description" content="Xuanou Ye - Mechanical Engineering student at Zhejiang University working at the intersection of advanced manufacturing, computational engineering, machine learning, and software development." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel-2: #18213d;
+      --text: #e8edf7;
+      --muted: #9fb0d0;
+      --accent: #66d9ef;
+      --accent-2: #8ef6c6;
+      --line: rgba(255,255,255,0.08);
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0a0f1d 0%, #0d1326 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { opacity: 0.9; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 16, 32, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(102,217,239,0.15), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(142,246,198,0.12), transparent 24%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(102,217,239,0.35);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      background: rgba(102,217,239,0.08);
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: #fff;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #5ea0ff);
+      color: #08101f;
+      font-weight: 700;
+      border: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: 0 0 26px;
+      max-width: 800px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3, .card h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .meta {
+      color: var(--accent-2);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    ul.clean li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    ul.clean li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skill-tags span {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      color: #d9e6ff;
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid rgba(102,217,239,0.35);
+      padding-left: 16px;
+      margin-left: 4px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Xuanou Ye</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Manufacturing · Machine Learning · Development</div>
+        <h1>Building intelligent tools for advanced manufacturing.</h1>
+        <p>
+          I am Xuanou Ye, a Mechanical Engineering student at Zhejiang University with experience
+          in hybrid additive-subtractive manufacturing, multi-physics simulation, CAM development,
+          and engineering software workflows. I work at the intersection of manufacturing systems,
+          computational methods, and software development.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/XuanouYe" target="_blank">View GitHub</a>
+          <a class="btn" href="#projects">Selected Projects</a>
+          <a class="btn" href="mailto:yexuanou2022@outlook.com">Email Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Focus Areas</h3>
+        <div class="stats">
+          <div class="stat">
+            <strong>Advanced Manufacturing</strong>
+            <span class="muted">Hybrid AM/SM, CNC, process optimization</span>
+          </div>
+          <div class="stat">
+            <strong>Computational Engineering</strong>
+            <span class="muted">Simulation, meshing, path planning, FEA</span>
+          </div>
+          <div class="stat">
+            <strong>Software Development</strong>
+            <span class="muted">Python, C, MATLAB, STM32 tooling</span>
+          </div>
+          <div class="stat">
+            <strong>Applied ML Potential</strong>
+            <span class="muted">Data analysis, image recognition, smart manufacturing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <p class="section-subtitle">
+        My work combines mechanical engineering knowledge with programming and numerical analysis.
+        I am especially interested in using data, simulation, and intelligent algorithms to improve
+        manufacturing efficiency, process stability, and digital engineering workflows.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>What I work on</h3>
+          <ul class="clean">
+            <li>Hybrid additive-subtractive manufacturing systems and tooling.</li>
+            <li>Manufacturing process simulation and structural analysis.</li>
+            <li>Python-based geometry processing, slicing, and G-code workflows.</li>
+            <li>Embedded motion control and engineering test platforms.</li>
+            <li>Future-oriented applications of machine learning in smart manufacturing.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Profile</h3>
+          <p class="muted">
+            I enjoy turning real engineering problems into reproducible computational pipelines.
+            Whether the task is building a CAM workflow, connecting Moldflow data to structural
+            analysis, or testing a robot control platform, I focus on practical systems that bridge
+            theory and implementation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-subtitle">
+        A selection of work across manufacturing systems, simulation, robotics, and engineering software.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="meta">Graduation Project · Zhejiang University</div>
+          <h3>Hybrid Additive-Subtractive Manufacturing for Alloy Casting</h3>
+          <p class="muted">
+            Developed and optimized a hybrid equipment workflow integrating 3D printing and CNC
+            subtractive processes for alloy casting prototype validation.
+          </p>
+          <ul class="clean">
+            <li>Built Vericut simulation models for the full machine structure.</li>
+            <li>Designed support-free mold printing strategies.</li>
+            <li>Planned multi-axis control methods for additive and subtractive machining.</li>
+            <li>Created Python scripts for STL processing and G-code post-processing.</li>
+            <li>Implemented motion control and parameter tuning with Mach3 CNC.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="meta">Internship · Leo Pump Zhejiang Company</div>
+          <h3>Coupled Mold-Flow and Structural Simulation for Plastic Pump Bodies</h3>
+          <p class="muted">
+            Built a co-simulation workflow to connect manufacturing process outputs with structural
+            performance analysis for plastic pump components.
+          </p>
+          <ul class="clean">
+            <li>Led Moldflow analyses to evaluate weld lines and fiber orientation effects.</li>
+            <li>Mapped residual stress and fiber orientation results into ANSYS and Helius models.</li>
+            <li>Performed static FEA for operational mechanical performance assessment.</li>
+            <li>Documented findings in technical reports and co-authored an academic paper.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="meta">Research Training · Zhejiang University</div>
+          <h3>Climbing In-Situ Hybrid Repair Robot</h3>
+          <p class="muted">
+            Contributed to a crawling robot platform for on-site additive and subtractive repair of
+            large structures.
+          </p>
+          <ul class="clean">
+            <li>Wrote STM32 embedded code for motion control tests.</li>
+            <li>Supported hardware selection, assembly, and platform integration.</li>
+            <li>Designed operation and testing procedures for the prototype platform.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="meta">Course Project · Zhejiang University</div>
+          <h3>CAM Software Development for 3D Printing</h3>
+          <p class="muted">
+            Developed a Python-based CAM tool for slicing, visualization, path planning, and G-code generation.
+          </p>
+          <ul class="clean">
+            <li>Implemented STL import and visualization using VTK.</li>
+            <li>Built slicing algorithms and layer-based path planning workflows.</li>
+            <li>Generated G-code and validated output on a physical 3D printer.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">
+        Technical capabilities across simulation, software, manufacturing, and embedded systems.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Engineering</h3>
+          <div class="skill-tags">
+            <span>SolidWorks</span>
+            <span>AutoCAD</span>
+            <span>ANSYS Workbench</span>
+            <span>Moldflow</span>
+            <span>Helius</span>
+            <span>Vericut</span>
+            <span>Fusion 360</span>
+            <span>Cura</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C</span>
+            <span>MATLAB</span>
+            <span>LaTeX</span>
+            <span>STM32</span>
+            <span>Arduino</span>
+            <span>VTK</span>
+            <span>Trimesh</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Interests</h3>
+          <div class="skill-tags">
+            <span>Smart Manufacturing</span>
+            <span>Industrial AI</span>
+            <span>Computational Mechanics</span>
+            <span>Machine Vision</span>
+            <span>Path Planning</span>
+            <span>Digital Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">
+        Academic training in mechanical engineering with international exposure and hands-on engineering projects.
+      </p>
+
+      <div class="timeline">
+        <div class="card timeline-item">
+          <h3>Zhejiang University</h3>
+          <div class="meta">B.Eng. in Mechanical Engineering · 2022.09 – 2026.06</div>
+          <p class="muted">
+            GPA 3.84/4.3. Built a strong foundation in design, manufacturing, simulation, and computational methods.
+          </p>
+        </div>
+
+        <div class="card timeline-item">
+          <h3>Technical University of Munich</h3>
+          <div class="meta">Exchange Program · 2024.10 – 2025.03</div>
+          <p class="muted">
+            Expanded international academic experience and interdisciplinary engineering perspective.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-box">
+      <div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          I am interested in opportunities related to advanced manufacturing, simulation-driven engineering,
+          industrial AI, robotics, and engineering software development.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Get in touch</h3>
+        <ul class="clean">
+          <li>Email: <a href="mailto:yexuanou2022@outlook.com">yexuanou2022@outlook.com</a></li>
+          <li>GitHub: <a href="https://github.com/XuanouYe" target="_blank">github.com/XuanouYe</a></li>
+          <li>Location: Wenzhou, Zhejiang, China</li>
+          <li>Languages: Chinese, English, German</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Xuanou Ye · Built for GitHub Pages
+    </div>
+  </footer>
+</body>
+</html>
